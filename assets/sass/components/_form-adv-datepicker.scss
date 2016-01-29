@@ -163,7 +163,7 @@
 .picker__input {
 	background-color: transparent !important;
 	border-bottom-style: solid !important;
-	color: $black-text-solid !important;
+	color: inherit !important;
 	cursor: text !important;
 	&.picker__input--active {
 		border-color: $brand-color-accent;
@@ -224,16 +224,19 @@
 .picker__select--month,
 .picker__select--year {
 	@extend .form-control;
-	background-image: none !important;
+	background-position: 100% (($line-height - 12) / 2) !important;
 	border-bottom: 0;
 	display: inline-block;
 	height: $line-height;
 	margin-left: $grid-gutter;
 	padding: 0;
 	width: auto;
-	-webkit-appearance: menulist-button !important;
 	&:first-child {
 		margin-left: 0;
+	}
+	&:focus {
+		border-bottom: 0;
+		padding-bottom: 0;
 	}
 }
 
@@ -274,7 +277,7 @@
 }
 
 .picker__weekday {
-	color: $black-hint;
+	color: $black-hint-solid;
 	padding-top: (($btn-height - $line-height) / 2) !important;
 	padding-bottom: (($btn-height - $line-height) / 2) !important;
 }
